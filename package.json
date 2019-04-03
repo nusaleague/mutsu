@@ -21,7 +21,6 @@
     "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
     "dotenv": "^7.0.0",
-    "express": "^4.16.4",
     "http-errors": "^1.7.2",
     "ky": "^0.9.0",
     "ky-universal": "^0.1.0",
