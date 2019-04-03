@@ -1,0 +1,144 @@
+.card.fixture {
+  margin: map-get($spacers, 3) auto;
+
+  @each $division, $color in $division-colors {
+    &.#{$division} {
+      border-color: $color;
+    }
+  }
+
+  &.intro {
+    & .card-img {
+      border-bottom: 1px solid $gray-300;
+    }
+  }
+
+  &.division {
+    .card-header {
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      border-bottom: none;
+      color: #fff;
+      position: relative;
+
+      @each $division, $color in $division-colors {
+        &.#{$division} {
+          background: $color;
+          transition: $btn-transition;
+
+          &:active {
+            background: darken($color, 15%);
+          }
+        }
+      }
+
+      & .title {
+        flex: 1 0 auto;
+        margin-bottom: 0;
+        font-size: 2rem;
+        text-align: center;
+      }
+
+      & .icon {
+        flex: 0 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.75em;
+      }
+    }
+  }
+}
+
+.match {
+  & + & {
+    margin: map-get($spacers, 5) auto 0;
+  }
+
+  .vs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    font-size: 2em;
+    padding: 0;
+    color: $text-muted;
+
+    &::before {
+      content: 'VS';
+    }
+  }
+
+  .match-mascot {
+    &.left {
+      padding-right: 0;
+    }
+
+    &.right {
+      padding-left: 0;
+    }
+  }
+}
+
+.card.mascot {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid currentColor;
+  box-shadow: none;
+  width: 100%;
+  max-width: 300px;
+  transition: transform 0.35s;
+
+  &.selected {
+    transform: scale(1.025);
+  }
+
+  &.left {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  &.right {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  .card-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-body {
+    padding: map-get($spacers, 3);
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    font-size: 1.5rem;
+    text-align: center;
+    white-space: nowrap;
+    line-height: 1.0;
+
+    .org-name {
+      font-size: 0.625em;
+    }
+
+    @include media-breakpoint-up(md) {
+      font-size: 2rem;
+    }
+  }
+
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: #000;
+    opacity: 0;
+    transition: opacity 0.35s;
+
+    &.not-selected {
+      opacity: 0.5;
+    }
+  }
+}

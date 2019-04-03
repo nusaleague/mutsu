@@ -1,0 +1,9 @@
+.container-center-card {
+  min-height: 100vh;
+  padding: map-get($spacers, 5);
+
+  @include media-breakpoint-up(sm) {
+    display: flex;
+    align-items: center;
+  }
+}

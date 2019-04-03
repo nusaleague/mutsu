@@ -1,0 +1,63 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+import Router from 'next/router'
+import {connect} from 'react-redux'
+import ConnectLogin from '../components/Login'
+
+export class LoginPage extends React.Component {
+  static propTypes = {
+    next: PropTypes.string,
+    info: PropTypes.string,
+    auth: PropTypes.object
+  }
+
+  static defaultProps = {
+    next: '/',
+    info: null,
+    auth: null
+  }
+
+  static async getInitialProps({query}) {
+    const {next, info} = query
+    return {next, info}
+  }
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      show: false
+    }
+  }
+
+  componentDidMount() {
+    if (this.props.auth) {
+      Router.replace(this.props.next)
+      return
+    }
+
+    this.setState({show: true})
+  }
+
+  render() {
+    if (!this.state.show) {
+      return null
+    }
+
+    const {next, info} = this.props
+
+    return (
+      <div className="container-center-card login-container">
+        <ConnectLogin {...{next, info}}/>
+      </div>
+    )
+  }
+}
+
+export default connect(
+  state => {
+    return {
+      auth: state.auth || null
+    }
+  }
+)(LoginPage)

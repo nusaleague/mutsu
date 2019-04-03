@@ -1,0 +1,25 @@
+.error-container {
+  min-height: 100vh;
+  padding: map-get($spacers, 5) 0;
+
+  @include media-breakpoint-up(sm) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.card.error {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+
+  .card-body {
+    padding: map-get($spacers, 5);
+  }
+
+  .card-footer {
+    font-size: $small-font-size;
+    color: $text-muted;
+  }
+}

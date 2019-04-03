@@ -1,0 +1,12 @@
+{
+  // Matikan linter JS built-in, nyalakan XO.
+  "javascript.validate.enable": false,
+  "javascript.format.enable": false,
+  "xo.enable": true,
+  "xo.format.enable": true,
+  // Matikan linter SCSS built-in, nyalakan stylelint.
+  "scss.validate": false,
+  "stylelint.enable": true,
+  // Sort berdasarkan ekstensi file (lebih rapi).
+  "explorer.sortOrder": "type"
+}
