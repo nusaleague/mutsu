@@ -2,11 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Router from 'next/router'
 import groupBy from 'lodash/groupBy'
-import {Container, Card, CardImg, CardBody, Button, Input} from 'reactstrap'
+import {Container, Card, CardImg, CardBody, Button, Input, FormGroup} from 'reactstrap'
 import {connect} from 'react-redux'
 import VoteDivision from '../VoteDivision'
 import {rpc} from '../../lib/endpoint'
 import withPersist from '../../lib/hoc/with-persist'
+import Footer from '../Footer'
 
 export class VoteFixture extends React.Component {
   static propTypes = {
@@ -49,13 +50,12 @@ export class VoteFixture extends React.Component {
       const userId = this.props.user.id
       const fixtureId = this.props.data.vote_fixture.id
       const submitData = {
-        comment: document.querySelector('#fixtureComment').value,
-        responses: Object.entries(this.state.choices).map(([matchId, mascotId]) => {
-          return {
+        comment: this.state.comment || null,
+        responses: Object.entries(this.state.choices)
+          .map(([matchId, mascotId]) => ({
             matchId: parseInt(matchId, 10),
             mascotId
-          }
-        })
+          }))
       }
 
       await rpc('submitResponse', [userId, fixtureId, submitData])
@@ -86,47 +86,52 @@ export class VoteFixture extends React.Component {
     const isAllChosen = !data.vote_match.find(match => !chosenIds.includes(String(match.id)))
 
     return (
-      <Container>
+      <>
+        <Container>
 
-        <Card className="fixture intro">
-          <CardImg src="/static/vote-banner.jpg" alt="Nusaimoe banner"/>
-          <CardBody>
-            <p>Selamat datang di Nusaimoe!</p>
-            <p>Tentukan maskot favorit kalian dengan berpartisipasi dalam pertandingan mingguan dari setiap divisi Nusaimoe.</p>
-          </CardBody>
-        </Card>
+          <Card className="card-fixture card-fixture-intro">
+            <CardImg src="/static/vote-banner.jpg" alt="Nusaimoe banner"/>
+            <CardBody>
+              <p>Selamat datang di Nusaimoe!</p>
+              <p>Tentukan maskot favorit kalian dengan berpartisipasi dalam pertandingan mingguan dari setiap divisi Nusaimoe.</p>
+            </CardBody>
+          </Card>
 
-        {
-          Object.entries(divisionMatches)
-            .map(([division, matches]) => (
-              <VoteDivision
-                key={division}
-                division={division}
-                matches={matches}
-                handleChoice={this.handleChoice}
-              />
-            ))
-        }
+          {
+            Object.entries(divisionMatches)
+              .map(([division, matches]) => (
+                <VoteDivision
+                  key={division}
+                  division={division}
+                  matches={matches}
+                  handleChoice={this.handleChoice}
+                />
+              ))
+          }
 
-        <Card className="fixture">
-          <CardBody>
-            {isAllChosen ? (
-              <>
-                <p>Terima kasih sudah memilih para maskot pada pertandingan minggu ini!</p>
-                <Input type="textarea" id="fixtureComment" value={comment} onChange={this.handleComment}/>
-                <p>Klik tombol di bawah ini untuk mengirimkan vote kamu.</p>
-                <Button block type="button" onClick={() => this.handleSubmit()}>Kirim vote</Button>
-              </>
-            ) : (
-              <>
-                <p>Silakan melengkapi pilihan kamu untuk pertandingan-pertandingan di atas.</p>
-                <Button disabled block type="button">Kirim vote</Button>
-              </>
-            )}
-          </CardBody>
-        </Card>
+          <Card className="card-fixture">
+            <CardBody>
+              {isAllChosen ? (
+                <>
+                  <p>Terima kasih sudah memilih para maskot pada pertandingan minggu ini!</p>
+                  <p>Silakan tinggalkan komentar, kritik, atau saran kamu terkait pertandingan kali ini di bawah ini.</p>
+                  <FormGroup>
+                    <Input type="textarea" value={comment} maxLength="2000" onChange={this.handleComment}/>
+                  </FormGroup>
+                  <Button block type="button" onClick={() => this.handleSubmit()}>Kirim vote</Button>
+                </>
+              ) : (
+                <>
+                  <p>Silakan melengkapi pilihan kamu untuk pertandingan-pertandingan di atas.</p>
+                  <Button disabled block type="button">Kirim vote</Button>
+                </>
+              )}
+            </CardBody>
+          </Card>
 
-      </Container>
+        </Container>
+        <Footer/>
+      </>
     )
   }
 }

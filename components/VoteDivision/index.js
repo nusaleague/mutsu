@@ -31,7 +31,7 @@ export default class VoteDivision extends React.Component {
     const {division, matches} = this.props
 
     return (
-      <Card className={classes('fixture', 'division', division)}>
+      <Card className={classes('card-fixture', 'card-fixture-division', division)}>
         <CardHeader className={division} onClick={this.toggleOpen}>
           <h1 className="title">Divisi {toProperCase(division)}</h1>
           <div className="icon"><FontAwesomeIcon icon="bars"/></div>

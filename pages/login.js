@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Router from 'next/router'
 import {connect} from 'react-redux'
-import ConnectLogin from '../components/Login'
+import LoginSocial from '../components/LoginSocial'
 
-export class LoginPage extends React.Component {
+export class LoginSocialPage extends React.Component {
   static propTypes = {
     next: PropTypes.string,
     info: PropTypes.string,
@@ -32,11 +32,13 @@ export class LoginPage extends React.Component {
 
   componentDidMount() {
     if (this.props.auth) {
-      Router.replace(this.props.next)
+      Router.replace(this.props.next).catch(console.error)
       return
     }
 
-    this.setState({show: true})
+    this.setState({
+      show: true
+    })
   }
 
   render() {
@@ -48,7 +50,7 @@ export class LoginPage extends React.Component {
 
     return (
       <div className="container-center-card login-container">
-        <ConnectLogin {...{next, info}}/>
+        <LoginSocial {...{next, info}}/>
       </div>
     )
   }
@@ -56,8 +58,6 @@ export class LoginPage extends React.Component {
 
 export default connect(
   state => {
-    return {
-      auth: state.auth || null
-    }
+    return {auth: state.auth || null}
   }
-)(LoginPage)
+)(LoginSocialPage)

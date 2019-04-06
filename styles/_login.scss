@@ -4,7 +4,11 @@ $provider-colors: (
   google: #ea4335
 );
 
-.card.login {
+.login-container {
+  background: $gray-100;
+}
+
+.card-login {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
@@ -37,8 +41,4 @@ $provider-colors: (
       }
     }
   }
-}
-
-.login-container {
-  background: $gray-100;
 }

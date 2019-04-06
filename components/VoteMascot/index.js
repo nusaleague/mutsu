@@ -51,11 +51,11 @@ export default class VoteMascot extends React.Component {
       <>
         <Card
           id={id}
-          className={classes('mascot', placement, {selected})}
+          className={classes('card-mascot', placement, {selected})}
           style={{color}}
           onClick={onChoose}
         >
-          <div className={classes('overlay', {'not-selected': selected === false})}/>
+          <div className={classes('card-overlay', {'not-selected': selected === false})}/>
 
           <CardImg top
             src={`${process.env.FILE_URL}/avatar/${slug}.png`}
@@ -63,13 +63,12 @@ export default class VoteMascot extends React.Component {
           />
 
           <CardBody
-            className="mascot-text"
             style={{
               background: color,
               color: computeTextColor(color)
             }}
           >
-            <div className="name">{name}</div>
+            <div>{name}</div>
             <div className="org-name">{orgName}</div>
           </CardBody>
         </Card>
@@ -90,12 +89,17 @@ export default class VoteMascot extends React.Component {
 }
 
 function computeTextColor(backgroundColorHex) {
+  // https://github.com/twbs/bootstrap/blob/3bf08d87c9bedfe7cf4a0d52eb551d21755d9697/scss/_variables.scss
+  const THRESHOLD = 150 / 255
+  const COLOR_DARK = '#212529'
+  const COLOR_LIGHT = '#fff'
+
   const [r, g, b] = /#(.{2})(.{2})(.{2})/g.exec(backgroundColorHex)
     .slice(1, 4)
     .map(hex => Number.parseInt(hex, 16) / 255)
 
-  // https://stackoverflow.com/questions/1855884/determine-font-color-based-on-background-color
+  // https://github.com/twbs/bootstrap/blob/v4-dev/scss/_functions.scss
   const lum = ((r * 299) + (g * 587) + (b * 114)) / 1000
 
-  return lum > 0.5 ? '#000' : '#fff'
+  return lum > THRESHOLD ? COLOR_DARK : COLOR_LIGHT
 }

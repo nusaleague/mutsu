@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Error from 'next/error'
 import {BadRequest} from 'http-errors'
+import {Container, Card, CardBody} from 'reactstrap'
+import Footer from '../../components/Footer'
 import ConnectVoteFixture from '../../components/VoteFixture'
 import {shuffleDeep, checkAuth} from '../../lib/util'
 import {rpc} from '../../lib/endpoint'
@@ -45,19 +47,47 @@ export default class VotePage extends React.Component {
     }
 
     if (this.props.userHasVoted) {
-      return <p>User has voted</p>
+      return (
+        <>
+          <Container>
+
+            <Card className="card-fixture card-fixture-voted">
+              <CardBody>
+                <h1>Kamu sudah mengirimkan voting</h1>
+                <p>Kamu sudah mengirimkan pilihan kamu untuk pertandingan kali ini.</p>
+                <p>Nantikan pertandingan berikutnya!</p>
+              </CardBody>
+            </Card>
+
+          </Container>
+          <Footer/>
+        </>
+      )
     }
 
     const {fixtureData} = this.props
 
     if (!fixtureData) {
-      // TODO Tampilan "voting tidak ada"
       return <Error statusCode={404}/>
     }
 
     if (!fixtureData.status) {
-      // TODO Tampilan "voting sudah ditutup"
-      return <Error statusCode={410}/>
+      return (
+        <>
+          <Container>
+
+            <Card className="card-fixture card-fixture-voted">
+              <CardBody>
+                <h1>Pertandingan sudah ditutup</h1>
+                <p>Pertandingan yang kamu tuju sudah ditutup.</p>
+                <p>Nantikan pertandingan berikutnya!</p>
+              </CardBody>
+            </Card>
+
+          </Container>
+          <Footer/>
+        </>
+      )
     }
 
     return <ConnectVoteFixture data={fixtureData}/>

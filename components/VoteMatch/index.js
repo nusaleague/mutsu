@@ -28,7 +28,7 @@ export default class VoteMatch extends React.Component {
               onChoose={() => this.props.handleChoice(match.id, mascotLeft.id)}
             />
           </Col>
-          <Col xs="2" className="vs"/>
+          <Col xs="2" className="match-vs"/>
           <Col xs="5"className="match-mascot right">
             <VoteMascot
               placement="right"

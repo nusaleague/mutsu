@@ -3,9 +3,8 @@ import PropTypes from 'prop-types'
 import Link from 'next/link'
 import {Card, CardHeader, CardBody, CardFooter, Button, Container, Row, Col, UncontrolledAlert} from 'reactstrap'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {connect} from 'react-redux'
 
-export class Login extends React.Component {
+export default class LoginSocial extends React.Component {
   static propTypes = {
     next: PropTypes.string,
     info: PropTypes.string
@@ -17,7 +16,7 @@ export class Login extends React.Component {
   }
 
   handleLogin = provider => {
-    sessionStorage.setItem('authRedirect', this.props.next)
+    sessionStorage.setItem('auth-redirect', this.props.next)
 
     const params = new URLSearchParams()
     params.append('next', 'web')
@@ -30,7 +29,7 @@ export class Login extends React.Component {
     const {info} = this.props
 
     return (
-      <Card className="login">
+      <Card className="card-login">
         <CardHeader>
           <h1>Masuk ke web Nusa League</h1>
         </CardHeader>
@@ -76,5 +75,3 @@ export class Login extends React.Component {
     )
   }
 }
-
-export default connect()(Login)

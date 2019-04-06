@@ -1,13 +1,11 @@
 import React from 'react'
+import Error from 'next/error'
 import Head from 'next/head'
 import NextApp, {Container} from 'next/app'
-import Error from 'next/error'
 import {Provider} from 'react-redux'
 import initializeIconLibrary from '../lib/font-awesome'
 import {ENV_SERVER} from '../lib/env'
 import {initializeStore} from '../store'
-import {client} from '../lib/endpoint'
-import {authLogin} from '../store/actions'
 
 // eslint-disable-next-line import/no-unassigned-import
 import '../styles/main'
@@ -25,13 +23,17 @@ export default class App extends NextApp {
       try {
         props.pageProps = await Component.getInitialProps(ctx)
       } catch (error) {
-        if (error.statusCode) {
-          props.error = {
-            statusCode: error.statusCode
-          }
-        } else {
+        const {statusCode} = error
+
+        if (!statusCode) {
           // TODO Handle error without status code
           throw error
+        }
+
+        props.error = {statusCode}
+
+        if (ctx.res) {
+          ctx.res.statusCode = statusCode
         }
       }
     }
@@ -44,17 +46,6 @@ export default class App extends NextApp {
   constructor(props) {
     super(props)
     this.store = getStore(props.initialState)
-  }
-
-  componentDidMount() {
-    if (!this.store.getState().auth) {
-      this.store.dispatch(async dispatch => {
-        const user = await client.get('auth').json()
-        if (user) {
-          dispatch(authLogin(user))
-        }
-      }).catch(console.error)
-    }
   }
 
   render() {
@@ -90,9 +81,7 @@ function getStore(initialState = {}) {
   if (!window[REDUX_STORE]) {
     const store = initializeStore(loadState(initialState))
 
-    store.subscribe(() => {
-      saveState(store.getState())
-    })
+    store.subscribe(() => saveState(store.getState()))
 
     window[REDUX_STORE] = store
   }

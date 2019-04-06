@@ -1,0 +1,9 @@
+.legal {
+  margin: map-get($spacers, 5) auto;
+  max-width: map-get($container-max-widths, sm);
+  text-align: justify;
+}
+
+.legal-back {
+  text-align: right;
+}
