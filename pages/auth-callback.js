@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Router from 'next/router'
 import {connect} from 'react-redux'
 import {authLogin} from '../store/actions'
-import {client} from '../lib/endpoint'
+import {client} from '../libnusa/api'
 
 export class AuthCallbackPage extends React.Component {
   static propTypes = {

@@ -5,8 +5,8 @@ import groupBy from 'lodash/groupBy'
 import {Container, Card, CardImg, CardBody, Button, Input, FormGroup} from 'reactstrap'
 import {connect} from 'react-redux'
 import VoteDivision from '../VoteDivision'
-import {rpc} from '../../lib/endpoint'
-import withPersist from '../../lib/hoc/with-persist'
+import {rpc} from '../../libnusa/api'
+import withPersist from '../../libnusa/hoc/with-persist'
 import Footer from '../Footer'
 
 export class VoteFixture extends React.Component {

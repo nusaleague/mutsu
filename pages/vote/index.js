@@ -6,8 +6,8 @@ import {Container, Card, CardBody} from 'reactstrap'
 import Footer from '../../components/Footer'
 import ConnectVoteFixture from '../../components/VoteFixture'
 import {shuffleDeep, checkAuth} from '../../lib/util'
-import {rpc} from '../../lib/endpoint'
-import {ENV_SERVER} from '../../lib/env'
+import {rpc} from '../../libnusa/api'
+import {ENV_SERVER} from '../../libnusa/env'
 
 export default class VotePage extends React.Component {
   static propTypes = {

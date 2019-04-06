@@ -4,7 +4,7 @@ import Head from 'next/head'
 import NextApp, {Container} from 'next/app'
 import {Provider} from 'react-redux'
 import initializeIconLibrary from '../lib/font-awesome'
-import {ENV_SERVER} from '../lib/env'
+import {ENV_SERVER} from '../libnusa/env'
 import {initializeStore} from '../store'
 
 // eslint-disable-next-line import/no-unassigned-import
