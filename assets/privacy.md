@@ -1,23 +1,57 @@
-# Kebijakan Privasi
+# Kebijakan Privasi Nusa League
 
-TBD
+Tanggal: 2019-02-04
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent turpis sem, finibus in luctus vitae, congue eu est. Aliquam erat volutpat. Pellentesque orci ipsum, commodo eget magna non, pretium venenatis dolor. Vestibulum at finibus ante, nec sagittis libero. Sed non condimentum metus. Suspendisse non arcu in nibh auctor vehicula eu at arcu. Praesent dictum ultricies pellentesque. Praesent sit amet ante nec lacus finibus finibus sed id mauris. In hac habitasse platea dictumst. In egestas leo sit amet pellentesque iaculis. Aliquam auctor nec arcu eget porta. Quisque sit amet enim quis erat venenatis condimentum. Proin vulputate diam vel aliquam fringilla. Proin posuere nisi libero, in ullamcorper leo condimentum eget.
+Nusa League menghargai data pribadi Anda, sehingga kami berusaha melindungi data pribadi yang Anda berikan kepada kami. Dokumen Kebijakan Privasi ini menjelaskan bagaimana Nusa League mengumpulkan, menyimpan, menggunakan, dan mempublikasikan data Pengguna Layanan Nusa League.
 
-Morbi vitae tempor lacus. Suspendisse dapibus hendrerit tincidunt. Quisque sollicitudin dolor tortor, quis posuere lectus convallis a. Sed sed fermentum mauris, eget mattis sem. Mauris at volutpat tortor. Vivamus ut dolor sed ex dictum rhoncus eget id purus. Morbi quam eros, auctor ut nibh vitae, lobortis ullamcorper dui. Integer tempus ac dolor a viverra. Maecenas sit amet mauris et velit vulputate semper vel quis arcu. Nulla facilisi. Suspendisse potenti.
+## 1. Pengumpulan data
 
-Maecenas varius odio eu purus gravida dapibus. Morbi feugiat velit vel nibh congue, ac tincidunt mi tincidunt. Proin ultricies vestibulum ligula, quis bibendum est pharetra et. Cras dictum euismod tortor sed cursus. Donec fringilla pellentesque laoreet. Cras vel dictum massa. Donec placerat vehicula laoreet. Fusce quis dapibus odio. Quisque nibh augue, vehicula at laoreet sit amet, rutrum sit amet sem. Etiam cursus, ipsum rhoncus pellentesque laoreet, eros urna vulputate ante, eu porta sapien nibh eu magna. Duis dolor enim, iaculis eu enim non, dapibus mollis felis. Donec eu tristique elit.
+### 1.1. Alamat *email* dan akun media sosial
 
-Integer ut turpis a nibh accumsan hendrerit. Nulla et nunc sit amet risus ultricies iaculis a vitae leo. Vestibulum lacus quam, vehicula eget nisl quis, tincidunt tempor nisi. Integer placerat consectetur leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi tincidunt, nisl imperdiet faucibus convallis, massa magna pharetra velit, eget congue arcu ante mollis sapien. Aliquam vel tempus diam. Mauris fringilla mauris tincidunt malesuada dictum. Nunc viverra elementum lectus vel aliquet. Vestibulum lacus nibh, venenatis ut laoreet ut, consectetur eget ipsum. Etiam gravida justo et bibendum gravida.
+Nusa League memerlukan informasi akun media sosial Pengguna Layanan Nusa League dalam rangka memastikan kebenaran dan keabsahan data-data yang tersedia. Misalnya, kami menggunakan informasi akun media sosial untuk memastikan setiap pengirim data *voting* untuk pertandingan Nusaimoe/Nusaikemen adalah manusia (bukan *bot*) dan unik (hanya satu data per orang).
 
-Nullam consequat nulla eget diam viverra, vel sollicitudin eros pharetra. Sed ante quam, tempus eget rhoncus et, dictum nec orci. Morbi interdum iaculis congue. Aenean porttitor dui eu mollis aliquam. Nulla elementum luctus efficitur. Duis rutrum ullamcorper lobortis. Donec sed nulla magna. Maecenas a gravida ex, id ornare ligula. Nullam sed placerat lorem. Aliquam pretium orci magna. Nullam imperdiet sodales nunc, et tincidunt nibh pellentesque sed. Praesent finibus sem vel convallis condimentum. Etiam tellus odio, mattis et lectus a, lacinia viverra tortor. Praesent convallis mauris quam, at accumsan lectus aliquam sed.
+Pada saat Pengguna melakukan *login* dengan menggunakan akun media sosial, maka kami akan menyimpan nilai unik akun media sosial Pengguna dan data yang diberikan oleh penyedia layanan media sosial lewat antarmuka pemograman yang ada. Sesuai dengan antarmuka yang tersedia untuk setiap akun media sosial, Pengguna harus mengkonfirmasi data akun media sosial yang akan kami terima. Kami berusaha membatasi jumlah data yang diperlukan sesuai dengan kebutuhan Layanan Nusa League.
 
-Maecenas non sem sapien. Curabitur non consequat risus. Integer dui quam, euismod sit amet volutpat ut, tristique eu nibh. Quisque justo lorem, vulputate ut sem quis, hendrerit euismod augue. Donec facilisis molestie erat id posuere. Duis nisl diam, feugiat sed imperdiet vitae, ullamcorper in ante. Duis tempus mauris et mauris dapibus, eu facilisis purus posuere.
+### 1.2. HTTP Log
 
-Sed rutrum magna quis tortor interdum volutpat. Pellentesque viverra scelerisque diam vel gravida. Suspendisse potenti. Aliquam erat volutpat. Maecenas ac turpis nec arcu vehicula dignissim eget in velit. Phasellus vulputate, urna eget ultricies accumsan, tortor lorem mattis sem, et vulputate leo justo nec ex. Fusce cursus vestibulum risus, sed rhoncus ipsum malesuada sagittis. Nullam sodales turpis est, ac iaculis nibh faucibus vel.
+Nusa League akan mencatat seluruh permintaan HTTP (*HTTP request*) yang masuk ke dalam sistem kami. Catatan yang disimpan mencakup namun tidak terbatas pada alamat *remote*, waktu permintaan, dan statistik data permintaan HTTP (misalnya ukuran permintaan dan *user agent*). Kami menjamin catatan ini hanya akan digunakan untuk kebutuhan pengelolaan sistem Layanan Nusa League, dan akan menghapus catatan secara berkala.
 
-Vivamus blandit erat vel libero mollis, nec ullamcorper nibh pharetra. Aliquam eget leo massa. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam ultrices erat in dui pulvinar convallis. Fusce placerat mauris justo, eu ultricies augue fermentum non. Cras pellentesque laoreet scelerisque. Curabitur congue magna in dictum condimentum. Integer euismod eleifend neque, varius sagittis nisi gravida at. Sed id dui nec dui dignissim porttitor vel lacinia ipsum. Sed in lacus ante. Sed lobortis massa at interdum eleifend. Mauris ut mattis erat. Sed id pellentesque nulla.
+### 1.3. Error Log
 
-Sed mauris enim, feugiat vulputate ex a, consectetur malesuada purus. Duis mollis, dui eu scelerisque hendrerit, tellus felis vestibulum justo, non porttitor nunc arcu non neque. Maecenas in tincidunt dolor, id suscipit quam. Nam eget consectetur nisl, vel egestas tellus. Fusce tincidunt leo non euismod luctus. Suspendisse faucibus justo quis magna tincidunt, in maximus ante dignissim. Ut condimentum turpis eu felis accumsan, at pulvinar felis tincidunt. Vivamus lacinia gravida ex, vel consectetur leo pretium nec. Phasellus a ex dapibus, suscipit quam at, eleifend turpis. Donec suscipit urna sed diam blandit, at pretium purus finibus. Etiam lobortis, magna sit amet porttitor viverra, enim libero sodales mauris, in sagittis odio nulla eget sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec nulla sem. Mauris ut auctor tellus. Aliquam mattis lorem non magna sagittis, posuere venenatis est euismod.
+Apabila terjadi *error* pada Layanan Nusa League, maka kami akan menyimpan informasi terkait dengan *error* tersebut untuk keperluan analisis dan perbaikan, seperti *header* HTTP dan nomor identifikasi pengguna. Kami berusaha untuk tidak menyimpan informasi sensitif di dalam catatan ini, hanya akan digunakan untuk kebutuhan perbaikan sistem Layanan Nusa League, dan akan menghapus catatan secara berkala.
 
-Proin eu mi in nunc aliquet fermentum. Nam dui enim, blandit vel ante id, rhoncus imperdiet leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus vulputate pharetra hendrerit. Proin vulputate sit amet metus vitae venenatis. Integer ullamcorper erat et iaculis imperdiet. Suspendisse vitae viverra nulla. Curabitur placerat vehicula ipsum nec tincidunt. Pellentesque suscipit lorem semper ultricies ornare.
+### 1.4. Data terkait Layanan Nusa League
+
+Kebijakan privasi untuk data yang terkait dengan penggunaan Layanan Nusa League diatur sesuai dengan dokumen Syarat dan Ketentuan Nusa League.
+
+## 2. Penyimpanan data
+
+Nusa League berkomitmen untuk: (1) menjaga keamanan data pribadi Pengguna untuk mencegah terjadinya permasalahan seperti kehilangan atau kebocoran data, dan (2) mengurangi sebanyak mungkin data pribadi Pengguna yang perlu disimpan di dalam sistem.
+
+## 3. Data retention
+
+Nusa League berusaha tidak melakukan penghapusan terhadap data yang disimpan di dalam sistem, kecuali jika terjadi keterbatasan teknis pada sistem (misalnya kekurangan sumber daya seperti ruangan memori) atau terjadi kegagalan pada sistem sehingga terdapat data yang hilang.
+
+Apabila dibutuhkan, Pengguna dapat meminta rekaman data terkait Pengguna yang tersimpan di dalam sistem Nusa League dan meminta penghapusan rekaman data terkait Pengguna yang tersimpan di dalam sistem Nusa League. Permintaan terhadap rekaman dan penghapusan data Pengguna dapat dilakukan dengan cara mengontak pihak Nusa League. Perlu diperhatikan bahwa penghapusan data Pengguna tidak akan mengubah data yang telah diolah sebelumnya dengan menggunakan data Pengguna yang bersangkutan.
+
+## 4. Publikasi data
+
+Kecuali diatur secara khusus, seluruh data yang tersimpan di sistem Nusa League hanya dapat diakses secara publik lewat antarmuka Layanan Nusa League dan antarmuka pemrograman aplikasi yang disediakan oleh Nusa League.
+
+Nusa League menjamin data pribadi Pengguna Layanan Nusa League hanya akan dapat diakses oleh Pengguna yang terkait dan staf Nusa League yang bertugas melakukan analisis dan pengolahan data.
+
+Untuk keperluan penyediaan informasi kepada Organisasi Anggota Nusa League, pihak ketiga, atau publik, Nusa League akan mempublikasikan data yang diperoleh dari hasil pengolahan data yang tersedia di dalam sistem Nusa League. Nusa League menjamin Pengguna tidak dapat dilacak dari data yang dimunculkan pada keperluan tersebut.
+
+Nusa League dapat diminta oleh pihak berwenang di Indonesia untuk menyediakan data yang tersedia di dalam sistem Nusa League dalam rangka penegakan hukum. Nusa League akan berusaha untuk memastikan pihak berwenang yang bersangkutan memahami tentang keamanan data di sistem Nusa League, dan hanya akan memberikan data yang relevan sesuai dengan kebutuhan.
+
+## 5. Kebocoran data
+
+Apabila terjadi permasalahan pada sistem Nusa League sehingga data Pengguna dapat diakses oleh pihak tertentu yang tidak sesuai dengan Kebijakan Privasi, Nusa League akan menerbitkan informasi terkait permasalahan tersebut pada media informasi yang dimiliki oleh Nusa League.
+
+## 6. Persetujuan
+
+Dengan melakukan akses sebagai Pengguna terhadap antarmuka Layanan Nusa League, Pengguna dianggap menyetujui seluruh isi dari Kebijakan Privasi Nusa League.
+
+Kebijakan Privasi Nusa League ini dapat diubah sewaktu-waktu secara sepihak oleh Nusa League tanpa pemberitahuan kepada setiap Pengguna, kecuali lewat Layanan Nusa League yang sewaktu-waktu akan memunculkan pemberitahuan ketika Pengguna mengakses Layanan jika terdapat perubahan pada Kebijakan Privasi Nusa League. Apabila Pengguna melanjutkan menggunakan Layanan setelah menerima pemberitahuan tersebut, Pengguna dianggap menyetujui seluruh isi dari Kebijakan Privasi Nusa League yang telah diubah.
+
+Dengan menyetujui isi dari Kebijakan Privasi Nusa League, Pengguna setuju untuk menerima informasi terkait pengelolaan data pada sistem Nusa League hanya lewat media informasi yang dimiliki oleh Nusa League.

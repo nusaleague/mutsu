@@ -13,7 +13,6 @@ export default class Footer extends React.Component {
             </Col>
             <Col className="footer-right" sm="6">
               <ul className="footer-links">
-                <li><Link href="/toc"><a>Syarat dan Ketentuan</a></Link></li>
                 <li><Link href="/privacy"><a>Kebijakan Privasi</a></Link></li>
               </ul>
             </Col>

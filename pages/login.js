@@ -32,7 +32,7 @@ export class LoginSocialPage extends React.Component {
 
   componentDidMount() {
     if (this.props.auth) {
-      Router.replace(this.props.next).catch(console.error)
+      Router.push(this.props.next).catch(console.error)
       return
     }
 

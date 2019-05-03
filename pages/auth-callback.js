@@ -22,7 +22,7 @@ export class AuthCallbackPage extends React.Component {
       const next = sessionStorage.getItem('auth-redirect') || '/'
       sessionStorage.removeItem('auth-redirect')
 
-      await Router.replace(next)
+      await Router.push(next)
     }).catch(console.error)
   }
 
