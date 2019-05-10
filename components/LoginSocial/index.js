@@ -49,17 +49,19 @@ export default class LoginSocial extends React.Component {
 
           <Container fluid>
             <Row>
-              <Col sm="4">
+              <Col sm="6">
                 <Button block className="btn-facebook" onClick={() => this.handleLogin('facebook')}>
                   <FontAwesomeIcon fixedWidth icon={['fab', 'facebook']}/> Facebook
                 </Button>
               </Col>
+              {/* Twitter di-disable dulu untuk sekarang.
               <Col sm="4">
                 <Button block className="btn-twitter" onClick={() => this.handleLogin('twitter')}>
                   <FontAwesomeIcon fixedWidth icon={['fab', 'twitter']}/> Twitter
                 </Button>
               </Col>
-              <Col sm="4">
+              */}
+              <Col sm="6">
                 <Button block className="btn-google" onClick={() => this.handleLogin('google')}>
                   <FontAwesomeIcon fixedWidth icon={['fab', 'google']}/> Google
                 </Button>
