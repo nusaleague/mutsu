@@ -2,9 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classes from 'classnames'
 import {Card, CardBody, CardHeader, Collapse} from 'reactstrap'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import VoteMatch from '../VoteMatch'
-import {toProperCase} from '../../lib/util'
 
 export default class VoteDivision extends React.Component {
   static propTypes = {
@@ -33,8 +31,11 @@ export default class VoteDivision extends React.Component {
     return (
       <Card className={classes('card-fixture', 'card-fixture-division', division)}>
         <CardHeader className={division} onClick={this.toggleOpen}>
-          <h1 className="title">Divisi {toProperCase(division)}</h1>
-          <div className="icon"><FontAwesomeIcon icon="bars"/></div>
+          <img src={`${process.env.FILE_URL}/division-banner/${division}.jpg`}/>
+          {/*
+            <h1 className="title">Divisi {toProperCase(division)}</h1>
+            <div className="icon"><FontAwesomeIcon icon="bars"/></div>
+          */}
         </CardHeader>
         <Collapse isOpen={this.state.isOpen}>
           <CardBody>

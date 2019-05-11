@@ -14,37 +14,11 @@
 
 .card-fixture-division {
   .card-header {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    border-bottom: none;
-    color: #fff;
-    position: relative;
+    padding: 0;
 
-    @each $division, $color in $division-colors {
-      &.#{$division} {
-        background: $color;
-        transition: $btn-transition;
-
-        &:active {
-          background: darken($color, 15%);
-        }
-      }
-    }
-
-    .title {
-      flex: 1 0 auto;
-      margin-bottom: 0;
-      font-size: 2rem;
-      text-align: center;
-    }
-
-    .icon {
-      flex: 0 0 auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 0.75em;
+    img {
+      width: 100%;
+      height: auto;
     }
   }
 
