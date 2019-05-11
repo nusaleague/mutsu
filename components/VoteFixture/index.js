@@ -90,7 +90,7 @@ export class VoteFixture extends React.Component {
         <Container>
 
           <Card className="card-fixture card-fixture-intro">
-            <CardImg src="/static/vote-banner.jpg" alt="Nusaimoe banner"/>
+            <CardImg src={`${process.env.FILE_URL}/nusaimoe2019-banner.jpg`} alt="Nusaimoe banner"/>
             <CardBody>
               <p>Selamat datang di Nusaimoe!</p>
               <p>Tentukan maskot favorit kalian dengan berpartisipasi dalam pertandingan mingguan dari setiap divisi Nusaimoe.</p>
