@@ -53,15 +53,15 @@ export default class Standings extends React.Component {
     return Object.entries(standings).map(([division, table]) => (
       <div key={division}>
         <h2>Divisi {division.replace(/^./, x => x.toUpperCase())}</h2>
-        <StandingsTable data={table} mascots={keyBy(this.state.data.mascot, 'id')}/>
+        <StandingsTable division={division} data={table} mascots={keyBy(this.state.data.mascot, 'id')}/>
       </div>
     ))
   }
 }
 
-function StandingsTable({mascots, data: rows}) {
+function StandingsTable({division, mascots, data: rows}) {
   return (
-    <Table striped className="standings-table">
+    <Table striped className={`standings-table ${division}`}>
       <thead>
         <tr>
           <th>Pos</th>
@@ -101,6 +101,7 @@ function StandingsTable({mascots, data: rows}) {
 }
 
 StandingsTable.propTypes = {
+  division: PropTypes.string.isRequired,
   mascots: PropTypes.object.isRequired,
   data: PropTypes.array.isRequired
 }

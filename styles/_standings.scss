@@ -17,6 +17,14 @@
     }
   }
 
+  @each $division, $division-color in $division-colors {
+    // https://css-tricks.com/useful-nth-child-recipies/
+    &.#{$division} tbody tr:nth-child(-n+4) {
+      background: $division-color;
+      color: #fff;
+    }
+  }
+
   .td-mascot-image {
     width: 4rem;
     padding-left: 0;
