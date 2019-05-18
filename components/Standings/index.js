@@ -51,7 +51,7 @@ export default class Standings extends React.Component {
     }
 
     return Object.entries(standings).map(([division, table]) => (
-      <div key={division}>
+      <div key={division} style={{margin: '0 auto', maxWidth: '600px'}}>
         <h2>Divisi {division.replace(/^./, x => x.toUpperCase())}</h2>
         <StandingsTable division={division} data={table} mascots={keyBy(this.state.data.mascot, 'id')}/>
       </div>
