@@ -1,0 +1,43 @@
+.result-match {
+  text-align: center;
+  margin: 0.5rem auto;
+  min-width: 600px; // sampai bisa dibikin responsive
+}
+
+.score {
+  @each $division, $division-color in $division-colors {
+    &.#{$division} {
+      background: $division-color;
+    }
+  }
+
+  color: #fff;
+
+  display: inline-block;
+  width: 5rem;
+  padding: 0.25rem 0;
+}
+
+.mascot-image {
+  margin: 0 0.5rem;
+
+  & img {
+    height: 2.5rem;
+    width: auto;
+  }
+}
+
+.mascot-name {
+  display: inline-block;
+  overflow: hidden;
+  min-width: 9rem;
+  vertical-align: middle;
+
+  &.left {
+    text-align: right;
+  }
+
+  &.right {
+    text-align: left;
+  }
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Form, FormGroup, Col, Input, Row, Button, Table} from 'reactstrap'
+import {Form, FormGroup, Col, Input, Row, Button} from 'reactstrap'
 import _ from 'lodash'
 import {rpc} from '../libnusa/api'
 import {acall} from '../libnusa/util'
@@ -112,7 +112,6 @@ export default class ViewResults extends React.Component {
           {
             this.state.result ? (() => {
               const {result} = this.state
-              console.log(result)
 
               for (const matchMascot of result.matchMascot) {
                 const mascotRow = result.mascotRows.find(row => row.id === matchMascot.mascot_id)
@@ -141,25 +140,29 @@ export default class ViewResults extends React.Component {
                 return (
                   <div key={division}>
                     <h1>Divisi {division.replace(/^./, x => x.toUpperCase())}</h1>
-                    <Table striped borderless>
-                      <tbody>
-                        {matches.map(match => {
-                          const [matchLeft, matchRight] = match
+                    <div className="result-division">
+                      {matches.map(match => {
+                        const [matchLeft, matchRight] = match
 
-                          return (
-                            <tr key={match.match_id}>
-                              <td><img src={`${process.env.FILE_URL}/banner/${matchLeft.mascotSlug}.png`}/></td>
-                              <td>{matchLeft.mascotName}</td>
-                              <td>{matchLeft.full_score}</td>
-                              <td>vs</td>
-                              <td>{matchRight.full_score}</td>
-                              <td>{matchRight.mascotName}</td>
-                              <td><img src={`${process.env.FILE_URL}/banner/${matchRight.mascotSlug}.png`}/></td>
-                            </tr>
-                          )
-                        })}
-                      </tbody>
-                    </Table>
+                        return (
+                          <div key={matchLeft.match_id} className="result-match">
+                            <span className="mascot-name left">
+                              {matchLeft.mascotName}
+                            </span>
+                            <span className="mascot-image left">
+                              <img src={`${process.env.FILE_URL}/banner/${matchLeft.mascotSlug}.png`}/>
+                            </span>
+                            <span className={`score ${division}`}>{matchLeft.full_score} - {matchRight.full_score}</span>
+                            <span className="mascot-image right">
+                              <img src={`${process.env.FILE_URL}/banner/${matchRight.mascotSlug}.png`}/>
+                            </span>
+                            <span className="mascot-name right">
+                              {matchRight.mascotName}
+                            </span>
+                          </div>
+                        )
+                      })}
+                    </div>
                   </div>
                 )
               })
