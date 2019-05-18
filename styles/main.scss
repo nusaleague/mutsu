@@ -1,6 +1,6 @@
 @import "variables";
 
-@import "bootstrap";
+@import "../libnusa/styles/nusa";
 
 @import "common";
 
@@ -8,3 +8,4 @@
 @import "vote";
 @import "footer";
 @import "full-page";
+@import "standings";

@@ -1,0 +1,35 @@
+
+.standings-table {
+  text-align: center;
+
+  tbody {
+    td, th {
+      border: none;
+      vertical-align: middle;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    tr:nth-child(4) {
+      td, th {
+        border-bottom: 2px solid #dee2e6;
+      }
+    }
+  }
+
+  .td-mascot-image {
+    width: 4rem;
+    padding-left: 0;
+    padding-right: 0.5rem;
+
+    img {
+      width: 4rem;
+      height: 2rem;
+    }
+  }
+
+  .td-mascot-name {
+    text-align: left;
+    width: 12rem;
+  }
+}

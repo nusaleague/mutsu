@@ -10,4 +10,7 @@ $border-radius: 0;
 $border-radius-lg: 0;
 $border-radius-sm: 0;
 
+// Change toast border radius to use $border-radius (https://github.com/twbs/bootstrap/pull/28621)
+$toast-border-radius: $border-radius !default;
+
 @import "~bootstrap/scss/bootstrap";

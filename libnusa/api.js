@@ -8,6 +8,10 @@ export const client = ky.extend({
   credentials: 'include'
 })
 
+export async function getUserData() {
+  return client.get('auth').json()
+}
+
 export async function rpc(method, params, opts = {}) {
   const {
     id = uuid()
