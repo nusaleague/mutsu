@@ -1,7 +1,7 @@
 import React from 'react'
 import Error from 'next/error'
 import Head from 'next/head'
-import NextApp, {Container} from 'next/app'
+import NextApp from 'next/app'
 import {Provider} from 'react-redux'
 
 // eslint-disable-next-line import/no-unassigned-import
@@ -53,19 +53,17 @@ export default (getStore, ComponentContainer = null) => {
             {/* Meta tag viewport untuk Bootstrap */}
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
           </Head>
-          <Container>
-            <Provider store={this.store}>
+          <Provider store={this.store}>
 
-              {ComponentContainer ? (
-                <ComponentContainer>
-                  <Component {...pageProps}/>
-                </ComponentContainer>
-              ) : (
+            {ComponentContainer ? (
+              <ComponentContainer>
                 <Component {...pageProps}/>
-              )}
+              </ComponentContainer>
+            ) : (
+              <Component {...pageProps}/>
+            )}
 
-            </Provider>
-          </Container>
+          </Provider>
         </>
       )
     }

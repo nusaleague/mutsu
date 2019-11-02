@@ -1,7 +1,7 @@
 import React from 'react'
 import Error from 'next/error'
 import Head from 'next/head'
-import NextApp, {Container} from 'next/app'
+import NextApp from 'next/app'
 import {Provider} from 'react-redux'
 import initializeIconLibrary from '../lib/font-awesome'
 import {ENV_SERVER} from '../libnusa/env'
@@ -62,11 +62,9 @@ export default class App extends NextApp {
           {/* Meta tag viewport untuk Bootstrap */}
           <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         </Head>
-        <Container>
-          <Provider store={this.store}>
-            <Component {...pageProps}/>
-          </Provider>
-        </Container>
+        <Provider store={this.store}>
+          <Component {...pageProps}/>
+        </Provider>
       </>
     )
   }
