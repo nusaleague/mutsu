@@ -22,12 +22,8 @@ export class LoginSocialPage extends React.Component {
     return {next, info}
   }
 
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      show: false
-    }
+  state = {
+    show: false
   }
 
   componentDidMount() {

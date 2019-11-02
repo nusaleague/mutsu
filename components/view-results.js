@@ -19,12 +19,8 @@ function getStageDisplayText(stage) {
 }
 
 export default class ViewResults extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      ready: false
-    }
+  state = {
+    ready: false
   }
 
   updateStages() {

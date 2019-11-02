@@ -8,7 +8,7 @@ export default combineReducers({
   auth
 })
 
-function auth(state = null, action) {
+function auth(state = null, action = null) {
   switch (action.type) {
     case AUTH_LOGIN:
       return {

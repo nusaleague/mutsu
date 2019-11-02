@@ -6,12 +6,8 @@ import keyBy from 'lodash/keyBy'
 import {rpc} from '../../libnusa/api'
 
 export default class Standings extends React.Component {
-  constructor() {
-    super()
-
-    this.state = {
-      data: null
-    }
+  state = {
+    data: null
   }
 
   componentDidMount() {

@@ -11,12 +11,8 @@ export default class VoteDivision extends React.Component {
     handleChoice: PropTypes.func.isRequired
   }
 
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      isOpen: true
-    }
+  state = {
+    isOpen: true
   }
 
   toggleOpen = () => {

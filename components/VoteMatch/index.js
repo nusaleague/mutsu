@@ -29,7 +29,7 @@ export default class VoteMatch extends React.Component {
             />
           </Col>
           <Col xs="2" className="match-vs"/>
-          <Col xs="5"className="match-mascot right">
+          <Col xs="5" className="match-mascot right">
             <VoteMascot
               placement="right"
               name={mascotRight.short_name}

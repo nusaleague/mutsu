@@ -11,7 +11,7 @@ import {ENV_SERVER} from '../../libnusa/env'
 
 export default class VotePage extends React.Component {
   static propTypes = {
-    userHasVoted: PropTypes.bool.isRequired,
+    isUserHasVoted: PropTypes.bool.isRequired,
     fixtureData: PropTypes.object
   }
 
@@ -36,7 +36,7 @@ export default class VotePage extends React.Component {
 
     const userId = ctx.store.getState().auth.user.id
     const fixtureId = fixtureData.vote_fixture.id
-    initialProps.userHasVoted = Boolean(await rpc('getResponse', [userId, fixtureId]))
+    initialProps.isUserHasVoted = Boolean(await rpc('getResponse', [userId, fixtureId]))
 
     return initialProps
   }
@@ -46,7 +46,7 @@ export default class VotePage extends React.Component {
       return null
     }
 
-    if (this.props.userHasVoted) {
+    if (this.props.isUserHasVoted) {
       return (
         <>
           <Container>

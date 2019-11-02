@@ -17,10 +17,7 @@ export class VoteFixture extends React.Component {
     initialState: PropTypes.object.isRequired
   }
 
-  constructor(props) {
-    super(props)
-    this.state = this.props.initialState
-  }
+  state = this.props.initialState
 
   handleChoice = (matchId, mascotId) => {
     this.setState(state => {

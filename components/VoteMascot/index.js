@@ -11,22 +11,18 @@ export default class VoteMascot extends React.Component {
     orgName: PropTypes.string.isRequired,
     placement: PropTypes.oneOf(['left', 'right']).isRequired,
     description: PropTypes.string,
-    selected: PropTypes.bool,
+    isSelected: PropTypes.bool,
     onChoose: PropTypes.func
   }
 
   static defaultProps = {
     description: null,
-    selected: null,
+    isSelected: null,
     onChoose: null
   }
 
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      showDescription: false
-    }
+  state = {
+    showDescription: false
   }
 
   toggleDescription = () => {
@@ -41,7 +37,7 @@ export default class VoteMascot extends React.Component {
       slug,
       orgName,
       placement,
-      selected,
+      isSelected,
       onChoose
     } = this.props
 
@@ -51,11 +47,11 @@ export default class VoteMascot extends React.Component {
       <>
         <Card
           id={id}
-          className={classes('card-mascot', placement, {selected})}
+          className={classes('card-mascot', placement, {selected: isSelected})}
           style={{color}}
           onClick={onChoose}
         >
-          <div className={classes('card-overlay', {'not-selected': selected === false})}/>
+          <div className={classes('card-overlay', {'not-selected': isSelected === false})}/>
 
           <CardImg top
             src={`${process.env.FILE_URL}/avatar/${slug}.png`}
