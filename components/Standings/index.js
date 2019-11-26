@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Table} from 'reactstrap'
+import { Table } from 'reactstrap'
 import groupBy from 'lodash/groupBy'
 import keyBy from 'lodash/keyBy'
-import {rpc} from '../../libnusa/api'
+import { rpc } from '../../libnusa/api'
 
 export default class Standings extends React.Component {
   state = {
@@ -11,7 +11,7 @@ export default class Standings extends React.Component {
   }
 
   componentDidMount() {
-    (async () => {
+    ;(async () => {
       this.setState({
         data: await rpc('getStandings', ['nusaimoe', '2019'])
       })
@@ -24,7 +24,9 @@ export default class Standings extends React.Component {
     }
 
     const standings = groupBy(
-      this.state.data.standings.sort((a, b) => a.division.localeCompare(b.division)),
+      this.state.data.standings.sort((a, b) =>
+        a.division.localeCompare(b.division)
+      ),
       'division'
     )
 
@@ -47,15 +49,19 @@ export default class Standings extends React.Component {
     }
 
     return Object.entries(standings).map(([division, table]) => (
-      <div key={division} style={{margin: '0 auto', maxWidth: '600px'}}>
+      <div key={division} style={{ margin: '0 auto', maxWidth: '600px' }}>
         <h2>Divisi {division.replace(/^./, x => x.toUpperCase())}</h2>
-        <StandingsTable division={division} data={table} mascots={keyBy(this.state.data.mascot, 'id')}/>
+        <StandingsTable
+          division={division}
+          data={table}
+          mascots={keyBy(this.state.data.mascot, 'id')}
+        />
       </div>
     ))
   }
 }
 
-function StandingsTable({division, mascots, data: rows}) {
+function StandingsTable({ division, mascots, data: rows }) {
   return (
     <Table striped className={`standings-table ${division}`}>
       <thead>
@@ -77,11 +83,11 @@ function StandingsTable({division, mascots, data: rows}) {
             <tr key={mascot.id}>
               <th>{row.rank}</th>
               <td className="td-mascot-image">
-                <img src={`${process.env.FILE_URL}/banner/${mascot.slug}.png`}/>
+                <img
+                  src={`${process.env.FILE_URL}/banner/${mascot.slug}.png`}
+                />
               </td>
-              <td className="td-mascot-name">
-                {mascot.short_name}
-              </td>
+              <td className="td-mascot-name">{mascot.short_name}</td>
               <td>{row.play}</td>
               <td>{row.win}</td>
               <td>{row.draw}</td>

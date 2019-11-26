@@ -2,14 +2,14 @@ import React from 'react'
 import Error from 'next/error'
 import Head from 'next/head'
 import NextApp from 'next/app'
-import {Provider} from 'react-redux'
+import { Provider } from 'react-redux'
 
 // eslint-disable-next-line import/no-unassigned-import
 import '../styles/main'
 
 export default (getStore, ComponentContainer = null) => {
   return class App extends NextApp {
-    static async getInitialProps({Component, ctx}) {
+    static async getInitialProps({ Component, ctx }) {
       const props = {}
 
       const store = getStore()
@@ -19,9 +19,9 @@ export default (getStore, ComponentContainer = null) => {
         try {
           props.pageProps = await Component.getInitialProps(ctx)
         } catch (error) {
-          const {statusCode = 500} = error
+          const { statusCode = 500 } = error
 
-          props.error = {statusCode}
+          props.error = { statusCode }
 
           if (ctx.res) {
             ctx.res.statusCode = statusCode
@@ -40,29 +40,30 @@ export default (getStore, ComponentContainer = null) => {
     }
 
     render() {
-      const {error} = this.props
+      const { error } = this.props
       if (error) {
         // TODO Buat custom error handler view.
-        return <Error statusCode={error.statusCode}/>
+        return <Error statusCode={error.statusCode} />
       }
 
-      const {Component, pageProps} = this.props
+      const { Component, pageProps } = this.props
       return (
         <>
           <Head>
             {/* Meta tag viewport untuk Bootstrap */}
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no"
+            />
           </Head>
           <Provider store={this.store}>
-
             {ComponentContainer ? (
               <ComponentContainer>
-                <Component {...pageProps}/>
+                <Component {...pageProps} />
               </ComponentContainer>
             ) : (
-              <Component {...pageProps}/>
+              <Component {...pageProps} />
             )}
-
           </Provider>
         </>
       )
@@ -86,14 +87,14 @@ export function loadState(defaultState = {}, maxAge = null) {
     return defaultState
   }
 
-  const {version, time, state} = JSON.parse(json)
+  const { version, time, state } = JSON.parse(json)
 
   if (version !== process.env.BUILD_ID) {
     return defaultState
   }
 
   if (typeof maxAge === 'number') {
-    if ((Date.now() - time) > maxAge) {
+    if (Date.now() - time > maxAge) {
       return defaultState
     }
   }

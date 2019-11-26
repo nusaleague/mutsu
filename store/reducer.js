@@ -1,8 +1,5 @@
-import {combineReducers} from 'redux'
-import {
-  AUTH_LOGIN,
-  AUTH_LOGOUT
-} from './actions'
+import { combineReducers } from 'redux'
+import { AUTH_LOGIN, AUTH_LOGOUT } from './actions'
 
 export default combineReducers({
   auth

@@ -1,7 +1,7 @@
 import ky from 'ky-universal'
 import uuid from 'uuid/v4'
 
-export const {ENDPOINT} = process.env
+export const { ENDPOINT } = process.env
 
 export const client = ky.extend({
   prefixUrl: process.env.ENDPOINT,
@@ -13,16 +13,14 @@ export async function getUserData() {
 }
 
 export async function rpc(method, params, opts = {}) {
-  const {
-    id = uuid()
-  } = opts
+  const { id = uuid() } = opts
 
   const httpResponse = await client.post('rpc', {
     json: {
       jsonrpc: '2.0',
       method,
       params,
-      ...(id ? {id} : {})
+      ...(id ? { id } : {})
     }
   })
 
@@ -30,10 +28,10 @@ export async function rpc(method, params, opts = {}) {
     return
   }
 
-  const {error, result} = await httpResponse.json()
+  const { error, result } = await httpResponse.json()
 
   if (error) {
-    const {code, message, data} = error
+    const { code, message, data } = error
     throw new AppError(code, message, data)
   }
 

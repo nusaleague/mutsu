@@ -10,7 +10,8 @@
     padding-right: 1em;
   }
 
-  .footer-left, .footer-right {
+  .footer-left,
+  .footer-right {
     display: flex;
     align-items: center;
   }
@@ -31,7 +32,8 @@
   }
 
   @include media-breakpoint-down(xs) {
-    .footer-left, .footer-right {
+    .footer-left,
+    .footer-right {
       justify-content: center;
     }
 

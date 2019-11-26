@@ -1,5 +1,3 @@
 module.exports = {
-  presets: [
-    'module:@tkesgar/sharo-babel'
-  ]
+  presets: ['module:@tkesgar/sharo-babel']
 }

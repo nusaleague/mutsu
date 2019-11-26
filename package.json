@@ -6,10 +6,9 @@
     "dev": "next -p ${PORT:-3002}",
     "build": "next build",
     "start": "next start",
-    "test": "npm run lint",
-    "lint": "npm run lint:js && npm run lint:scss",
-    "lint:js": "xo",
-    "lint:scss": "stylelint styles/**"
+    "xo": "xo",
+    "stylelint": "stylelint styles/**",
+    "prettier": "prettier --write **/*"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
@@ -27,6 +26,7 @@
     "lodash": "^4.17.15",
     "next": "^9.1.2",
     "node-sass": "^4.13.0",
+    "ow": "^0.15.0",
     "postcss-preset-env": "^6.7.0",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
@@ -40,25 +40,54 @@
     "worker-loader": "^2.0.0"
   },
   "devDependencies": {
+    "eslint-config-prettier": "^6.7.0",
     "eslint-config-sharo-scripts": "^0.3.0",
+    "eslint-plugin-prettier": "^3.1.1",
     "husky": "^3.0.9",
+    "lint-staged": "^9.4.3",
+    "prettier": "^1.19.1",
     "stylelint": "^11.1.1",
+    "stylelint-config-prettier": "^6.0.0",
     "stylelint-config-recommended-scss": "^4.0.0",
+    "stylelint-prettier": "^1.1.1",
     "stylelint-scss": "^3.12.0",
     "xo": "^0.25.3"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": "lint-staged"
     }
   },
+  "lint-staged": {
+    "*.js": [
+      "xo --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.scss": [
+      "stylelint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  },
   "xo": {
-    "extends": "sharo-scripts",
+    "extends": [
+      "sharo-scripts",
+      "plugin:prettier/recommended",
+      "prettier/react"
+    ],
     "space": 2,
     "semicolon": false,
     "env": "browser"
   },
   "stylelint": {
-    "extends": "stylelint-config-recommended-scss"
+    "extends": [
+      "stylelint-config-recommended-scss",
+      "stylelint-prettier/recommended"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false
   }
 }

@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Router from 'next/router'
-import {connect} from 'react-redux'
-import {acall} from '../util'
+import { connect } from 'react-redux'
+import { acall } from '../util'
 
 export default function withCheckAuth(redirect) {
   return Component => {
@@ -37,14 +37,12 @@ export default function withCheckAuth(redirect) {
           return null
         }
 
-        return <Component {...this.props}/>
+        return <Component {...this.props} />
       }
     }
 
-    return connect(
-      state => ({
-        auth: state.auth || null
-      })
-    )(ComponentWithAuth)
+    return connect(state => ({
+      auth: state.auth || null
+    }))(ComponentWithAuth)
   }
 }

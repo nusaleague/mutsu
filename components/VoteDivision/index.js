@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classes from 'classnames'
-import {Card, CardBody, CardHeader, Collapse} from 'reactstrap'
+import { Card, CardBody, CardHeader, Collapse } from 'reactstrap'
 import VoteMatch from '../VoteMatch'
 
 export default class VoteDivision extends React.Component {
@@ -17,17 +17,21 @@ export default class VoteDivision extends React.Component {
 
   toggleOpen = () => {
     this.setState(state => {
-      return {isOpen: !state.isOpen}
+      return { isOpen: !state.isOpen }
     })
   }
 
   render() {
-    const {division, matches} = this.props
+    const { division, matches } = this.props
 
     return (
-      <Card className={classes('card-fixture', 'card-fixture-division', division)}>
+      <Card
+        className={classes('card-fixture', 'card-fixture-division', division)}
+      >
         <CardHeader className={division} onClick={this.toggleOpen}>
-          <img src={`${process.env.FILE_URL}/division-banner/${division}.jpg`}/>
+          <img
+            src={`${process.env.FILE_URL}/division-banner/${division}.jpg`}
+          />
           {/*
             <h1 className="title">Divisi {toProperCase(division)}</h1>
             <div className="icon"><FontAwesomeIcon icon="bars"/></div>

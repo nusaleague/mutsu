@@ -6,19 +6,19 @@ Nusa League menghargai data pribadi Anda, sehingga kami berusaha melindungi data
 
 ## 1. Pengumpulan data
 
-### 1.1. Alamat *email* dan akun media sosial
+### 1.1. Alamat _email_ dan akun media sosial
 
-Nusa League memerlukan informasi akun media sosial Pengguna Layanan Nusa League dalam rangka memastikan kebenaran dan keabsahan data-data yang tersedia. Misalnya, kami menggunakan informasi akun media sosial untuk memastikan setiap pengirim data *voting* untuk pertandingan Nusaimoe/Nusaikemen adalah manusia (bukan *bot*) dan unik (hanya satu data per orang).
+Nusa League memerlukan informasi akun media sosial Pengguna Layanan Nusa League dalam rangka memastikan kebenaran dan keabsahan data-data yang tersedia. Misalnya, kami menggunakan informasi akun media sosial untuk memastikan setiap pengirim data _voting_ untuk pertandingan Nusaimoe/Nusaikemen adalah manusia (bukan _bot_) dan unik (hanya satu data per orang).
 
-Pada saat Pengguna melakukan *login* dengan menggunakan akun media sosial, maka kami akan menyimpan nilai unik akun media sosial Pengguna dan data yang diberikan oleh penyedia layanan media sosial lewat antarmuka pemograman yang ada. Sesuai dengan antarmuka yang tersedia untuk setiap akun media sosial, Pengguna harus mengkonfirmasi data akun media sosial yang akan kami terima. Kami berusaha membatasi jumlah data yang diperlukan sesuai dengan kebutuhan Layanan Nusa League.
+Pada saat Pengguna melakukan _login_ dengan menggunakan akun media sosial, maka kami akan menyimpan nilai unik akun media sosial Pengguna dan data yang diberikan oleh penyedia layanan media sosial lewat antarmuka pemograman yang ada. Sesuai dengan antarmuka yang tersedia untuk setiap akun media sosial, Pengguna harus mengkonfirmasi data akun media sosial yang akan kami terima. Kami berusaha membatasi jumlah data yang diperlukan sesuai dengan kebutuhan Layanan Nusa League.
 
 ### 1.2. HTTP Log
 
-Nusa League akan mencatat seluruh permintaan HTTP (*HTTP request*) yang masuk ke dalam sistem kami. Catatan yang disimpan mencakup namun tidak terbatas pada alamat *remote*, waktu permintaan, dan statistik data permintaan HTTP (misalnya ukuran permintaan dan *user agent*). Kami menjamin catatan ini hanya akan digunakan untuk kebutuhan pengelolaan sistem Layanan Nusa League, dan akan menghapus catatan secara berkala.
+Nusa League akan mencatat seluruh permintaan HTTP (_HTTP request_) yang masuk ke dalam sistem kami. Catatan yang disimpan mencakup namun tidak terbatas pada alamat _remote_, waktu permintaan, dan statistik data permintaan HTTP (misalnya ukuran permintaan dan _user agent_). Kami menjamin catatan ini hanya akan digunakan untuk kebutuhan pengelolaan sistem Layanan Nusa League, dan akan menghapus catatan secara berkala.
 
 ### 1.3. Error Log
 
-Apabila terjadi *error* pada Layanan Nusa League, maka kami akan menyimpan informasi terkait dengan *error* tersebut untuk keperluan analisis dan perbaikan, seperti *header* HTTP dan nomor identifikasi pengguna. Kami berusaha untuk tidak menyimpan informasi sensitif di dalam catatan ini, hanya akan digunakan untuk kebutuhan perbaikan sistem Layanan Nusa League, dan akan menghapus catatan secara berkala.
+Apabila terjadi _error_ pada Layanan Nusa League, maka kami akan menyimpan informasi terkait dengan _error_ tersebut untuk keperluan analisis dan perbaikan, seperti _header_ HTTP dan nomor identifikasi pengguna. Kami berusaha untuk tidak menyimpan informasi sensitif di dalam catatan ini, hanya akan digunakan untuk kebutuhan perbaikan sistem Layanan Nusa League, dan akan menghapus catatan secara berkala.
 
 ### 1.4. Data terkait Layanan Nusa League
 

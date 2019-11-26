@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Router from 'next/router'
-import {connect} from 'react-redux'
-import {authLogin} from '../store/actions'
-import {client} from '../libnusa/api'
+import { connect } from 'react-redux'
+import { authLogin } from '../store/actions'
+import { client } from '../libnusa/api'
 
 export class AuthCallbackPage extends React.Component {
   static propTypes = {
@@ -11,19 +11,21 @@ export class AuthCallbackPage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(async dispatch => {
-      const user = await client.get('auth').json()
-      if (!user) {
-        throw new Error('Expected user to be authenticated')
-      }
+    this.props
+      .dispatch(async dispatch => {
+        const user = await client.get('auth').json()
+        if (!user) {
+          throw new Error('Expected user to be authenticated')
+        }
 
-      dispatch(authLogin(user))
+        dispatch(authLogin(user))
 
-      const next = sessionStorage.getItem('auth-redirect') || '/'
-      sessionStorage.removeItem('auth-redirect')
+        const next = sessionStorage.getItem('auth-redirect') || '/'
+        sessionStorage.removeItem('auth-redirect')
 
-      await Router.push(next)
-    }).catch(console.error)
+        await Router.push(next)
+      })
+      .catch(console.error)
   }
 
   render() {

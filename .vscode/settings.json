@@ -8,5 +8,7 @@
   "scss.validate": false,
   "stylelint.enable": true,
   // Sort berdasarkan ekstensi file (lebih rapi).
-  "explorer.sortOrder": "type"
+  "explorer.sortOrder": "type",
+  // Nyalakan format on save.
+  "editor.formatOnSave": true
 }
