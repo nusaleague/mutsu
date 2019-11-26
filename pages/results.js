@@ -8,7 +8,7 @@ export default class ResultsPage extends React.Component {
     return (
       <DefaultLayout>
         <Container>
-          <ViewResults/>
+          <ViewResults />
         </Container>
       </DefaultLayout>
     )

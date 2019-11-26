@@ -6,7 +6,7 @@ export default class PrivacyPage extends React.Component {
   render() {
     return (
       <LegalContainer>
-        <PrivacyContent/>
+        <PrivacyContent />
       </LegalContainer>
     )
   }

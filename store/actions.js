@@ -5,7 +5,7 @@ export const AUTH_LOGOUT = 'AUTH_LOGOUT'
 export function authLogin(user) {
   return {
     type: AUTH_LOGIN,
-    data: {user}
+    data: { user }
   }
 }
 

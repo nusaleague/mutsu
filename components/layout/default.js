@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 import Navbar from '../navbar'
 import Footer from '../Footer'
 
-export default function DefaultLayout({children}) {
+export default function DefaultLayout({ children }) {
   return (
     <>
-      <Navbar/>
+      <Navbar />
       {children}
-      <Footer/>
+      <Footer />
     </>
   )
 }

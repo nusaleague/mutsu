@@ -2,10 +2,10 @@ import React from 'react'
 import Error from 'next/error'
 import Head from 'next/head'
 import NextApp from 'next/app'
-import {Provider} from 'react-redux'
+import { Provider } from 'react-redux'
 import initializeIconLibrary from '../lib/font-awesome'
-import {ENV_SERVER} from '../libnusa/env'
-import {initializeStore} from '../store'
+import { ENV_SERVER } from '../libnusa/env'
+import { initializeStore } from '../store'
 
 // eslint-disable-next-line import/no-unassigned-import
 import '../styles/main'
@@ -13,7 +13,7 @@ import '../styles/main'
 initializeIconLibrary()
 
 export default class App extends NextApp {
-  static async getInitialProps({Component, ctx}) {
+  static async getInitialProps({ Component, ctx }) {
     const props = {}
 
     const store = getStore()
@@ -23,14 +23,14 @@ export default class App extends NextApp {
       try {
         props.pageProps = await Component.getInitialProps(ctx)
       } catch (error) {
-        const {statusCode} = error
+        const { statusCode } = error
 
         if (!statusCode) {
           // TODO Handle error without status code
           throw error
         }
 
-        props.error = {statusCode}
+        props.error = { statusCode }
 
         if (ctx.res) {
           ctx.res.statusCode = statusCode
@@ -49,21 +49,24 @@ export default class App extends NextApp {
   }
 
   render() {
-    const {error} = this.props
+    const { error } = this.props
     if (error) {
       // TODO Handle error without status code
-      return <Error statusCode={error.statusCode}/>
+      return <Error statusCode={error.statusCode} />
     }
 
-    const {Component, pageProps} = this.props
+    const { Component, pageProps } = this.props
     return (
       <>
         <Head>
           {/* Meta tag viewport untuk Bootstrap */}
-          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+          />
         </Head>
         <Provider store={this.store}>
-          <Component {...pageProps}/>
+          <Component {...pageProps} />
         </Provider>
       </>
     )
@@ -103,13 +106,13 @@ function loadState(defaultState = {}) {
     return defaultState
   }
 
-  const {version, time, state} = JSON.parse(json)
+  const { version, time, state } = JSON.parse(json)
 
   if (version !== process.env.BUILD_ID) {
     return defaultState
   }
 
-  if ((Date.now() - time) > 60 * 60 * 1000) {
+  if (Date.now() - time > 60 * 60 * 1000) {
     return defaultState
   }
 

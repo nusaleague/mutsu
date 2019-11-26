@@ -2,9 +2,7 @@ import React from 'react'
 
 export default function withPersist(key, defaultState = {}, opts = {}) {
   function saveState(props, state) {
-    const {
-      storage = sessionStorage
-    } = opts
+    const { storage = sessionStorage } = opts
 
     const storageKey = typeof key === 'function' ? key(props) : key
     const data = JSON.stringify(state)
@@ -12,9 +10,7 @@ export default function withPersist(key, defaultState = {}, opts = {}) {
   }
 
   function loadState(props) {
-    const {
-      storage = sessionStorage
-    } = opts
+    const { storage = sessionStorage } = opts
 
     const storageKey = typeof key === 'function' ? key(props) : key
     const data = storage.getItem(storageKey)

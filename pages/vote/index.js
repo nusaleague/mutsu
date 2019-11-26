@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Error from 'next/error'
-import {BadRequest} from 'http-errors'
-import {Container, Card, CardBody} from 'reactstrap'
+import { BadRequest } from 'http-errors'
+import { Container, Card, CardBody } from 'reactstrap'
 import Footer from '../../components/Footer'
 import ConnectVoteFixture from '../../components/VoteFixture'
-import {shuffleDeep, checkAuth} from '../../lib/util'
-import {rpc} from '../../libnusa/api'
-import {ENV_SERVER} from '../../libnusa/env'
+import { shuffleDeep, checkAuth } from '../../lib/util'
+import { rpc } from '../../libnusa/api'
+import { ENV_SERVER } from '../../libnusa/env'
 
 export default class VotePage extends React.Component {
   static propTypes = {
@@ -24,7 +24,7 @@ export default class VotePage extends React.Component {
       return
     }
 
-    const {fixture: fixtureSlug} = ctx.query
+    const { fixture: fixtureSlug } = ctx.query
     if (!fixtureSlug) {
       throw new BadRequest()
     }
@@ -36,7 +36,9 @@ export default class VotePage extends React.Component {
 
     const userId = ctx.store.getState().auth.user.id
     const fixtureId = fixtureData.vote_fixture.id
-    initialProps.isUserHasVoted = Boolean(await rpc('getResponse', [userId, fixtureId]))
+    initialProps.isUserHasVoted = Boolean(
+      await rpc('getResponse', [userId, fixtureId])
+    )
 
     return initialProps
   }
@@ -50,32 +52,32 @@ export default class VotePage extends React.Component {
       return (
         <>
           <Container>
-
             <Card className="card-fixture card-fixture-voted">
               <CardBody>
                 <h1>Kamu sudah mengirimkan voting</h1>
-                <p>Kamu sudah mengirimkan pilihan kamu untuk pertandingan kali ini.</p>
+                <p>
+                  Kamu sudah mengirimkan pilihan kamu untuk pertandingan kali
+                  ini.
+                </p>
                 <p>Nantikan pertandingan berikutnya!</p>
               </CardBody>
             </Card>
-
           </Container>
-          <Footer/>
+          <Footer />
         </>
       )
     }
 
-    const {fixtureData} = this.props
+    const { fixtureData } = this.props
 
     if (!fixtureData) {
-      return <Error statusCode={404}/>
+      return <Error statusCode={404} />
     }
 
     if (!fixtureData.status) {
       return (
         <>
           <Container>
-
             <Card className="card-fixture card-fixture-voted">
               <CardBody>
                 <h1>Pertandingan sudah ditutup</h1>
@@ -83,13 +85,12 @@ export default class VotePage extends React.Component {
                 <p>Nantikan pertandingan berikutnya!</p>
               </CardBody>
             </Card>
-
           </Container>
-          <Footer/>
+          <Footer />
         </>
       )
     }
 
-    return <ConnectVoteFixture data={fixtureData}/>
+    return <ConnectVoteFixture data={fixtureData} />
   }
 }

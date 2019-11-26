@@ -34,7 +34,8 @@ $provider-colors: (
       background-color: $color;
       border-color: $color;
 
-      &:not(:disabled):active, &.active {
+      &:not(:disabled):active,
+      &.active {
         color: #fff;
         background-color: darken($color, 15%);
         border-color: darken($color, 15%);

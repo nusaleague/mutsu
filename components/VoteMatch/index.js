@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Row, Col} from 'reactstrap'
+import { Row, Col } from 'reactstrap'
 import VoteMascot from '../VoteMascot'
 
 export default class VoteMatch extends React.Component {
@@ -10,7 +10,7 @@ export default class VoteMatch extends React.Component {
   }
 
   render() {
-    const {match} = this.props
+    const { match } = this.props
     const [mascotLeft, mascotRight] = match.mascots
 
     return (
@@ -28,7 +28,7 @@ export default class VoteMatch extends React.Component {
               onChoose={() => this.props.handleChoice(match.id, mascotLeft.id)}
             />
           </Col>
-          <Col xs="2" className="match-vs"/>
+          <Col xs="2" className="match-vs" />
           <Col xs="5" className="match-mascot right">
             <VoteMascot
               placement="right"
