@@ -71,3 +71,6 @@ typings/
 
 # Hasil next-bundle-analyzer
 bundles
+
+# File settings untuk VS Code
+.vscode/settings.json
