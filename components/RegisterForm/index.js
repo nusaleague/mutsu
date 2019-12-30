@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import Router from 'next/router'
 import {
@@ -17,12 +17,25 @@ import './style' // eslint-disable-line import/no-unassigned-import
 import { client } from '../../libnusa/api'
 
 function ImageFilePreview({ file, ...restProps }) {
-  if (!file) {
-    return null
-  }
+  const [url, setURL] = useState(null)
 
-  const url = URL.createObjectURL(file)
-  return <img src={url} {...restProps} />
+  useEffect(() => {
+    if (file && !url) {
+      const url = URL.createObjectURL(file)
+      setURL(url)
+      return
+    }
+
+    if (!file && url) {
+      URL.revokeObjectURL(url)
+      setURL(null)
+      return
+    }
+
+    return url => URL.revokeObjectURL(url)
+  }, [file, url])
+
+  return url ? <img src={url} {...restProps} /> : null
 }
 
 ImageFilePreview.propTypes = {
