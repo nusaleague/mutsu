@@ -4,8 +4,9 @@
 }
 
 .RegisterPage_headerImage {
-  background-image: url('https://safebooru.donmai.us/data/__unicorn_azur_lane_drawn_by_agung_syaeful_anwar__8956de19b0a21fac9d7af54dc05675b5.jpg');
-  background-size: cover;
   width: 100%;
-  height: 20rem;
+  height: auto;
+  max-width: 1200px;
+  display: block;
+  margin: 0 auto;
 }

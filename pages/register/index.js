@@ -5,11 +5,17 @@ import '../../styles/pages/register' // eslint-disable-line import/no-unassigned
 
 export default function RegisterPage() {
   return (
-    <div className="RegisterPage_container my-5">
-      <Container fluid>
-        <div className="RegisterPage_headerImage" />
-        <RegisterForm />
-      </Container>
-    </div>
+    <>
+      <img
+        src="/static/register-banner.jpg"
+        alt="Banner registrasi"
+        className="RegisterPage_headerImage"
+      />
+      <div className="RegisterPage_container my-5">
+        <Container fluid>
+          <RegisterForm />
+        </Container>
+      </div>
+    </>
   )
 }

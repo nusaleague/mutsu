@@ -102,7 +102,7 @@ export default function RegisterForm() {
     formData.set('data', JSON.stringify(data))
     formData.set('recaptchaToken', formValues.recaptchaToken)
     ;(async () => {
-      await client.post('register', { body: formData })
+      await client.post('register', { body: formData, timeout: false })
       await Router.push('/register/success')
     })().catch(error => {
       // eslint-disable-next-line no-alert
