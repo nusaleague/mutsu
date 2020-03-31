@@ -24,7 +24,7 @@
     "ky": "^0.15.0",
     "ky-universal": "^0.3.0",
     "lodash": "^4.17.15",
-    "next": "^9.1.5",
+    "next": "^9.3.2",
     "node-sass": "^4.13.0",
     "ow": "^0.15.0",
     "postcss-preset-env": "^6.7.0",
